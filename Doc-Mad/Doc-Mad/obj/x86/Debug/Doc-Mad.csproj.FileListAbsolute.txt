@@ -12,3 +12,5 @@ C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\L
 C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\obj\x86\Debug\Doc-Mad.exe
 C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\obj\x86\Debug\Doc-Mad.pdb
+C:\Users\Ondra\Documents\GitHub\Doc-Mad\Doc-Mad\Doc-Mad\obj\x86\Debug\Doc-Mad.exe
+C:\Users\Ondra\Documents\GitHub\Doc-Mad\Doc-Mad\Doc-Mad\obj\x86\Debug\Doc-Mad.pdb
