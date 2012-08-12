@@ -1,0 +1,14 @@
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\Content\davis2_0.png
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\Doc-Mad.exe
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\Doc-Mad.pdb
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\Lidgren.Network.dll
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\MonoGame.Framework.Windows.dll
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\OpenTK.dll
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\Tao.Sdl.dll
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\Lidgren.Network.Windows.dll
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\OpenTK.xml
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\Lidgren.Network.xml
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\bin\Debug\Lidgren.Network.Windows.xml
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\obj\x86\Debug\Doc-Mad.exe
+C:\Users\Ondra\Documents\Visual Studio 2010\Projects\Doc-Mad\Doc-Mad\obj\x86\Debug\Doc-Mad.pdb
