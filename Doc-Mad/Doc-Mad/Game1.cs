@@ -19,14 +19,14 @@ namespace Doc_Mad
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        int cd = 1000;
 
-        //---------------------
-        int cd;
-        int frame = 1;
-        int smer = 1;
+        Texture2D background;
+        Vector2 bgPos = new Vector2(0, 0);
 
-        Texture2D sprite;
-        //---------------------
+        Player player;
+
+        List<Tile> tiles = new List<Tile>();
 
 
         public Game1()
@@ -60,8 +60,56 @@ namespace Doc_Mad
 
             // TODO: use this.Content to load your game content here
 
-            // Nacteni spritu
-            sprite = Content.Load<Texture2D>("davis2_0.png");
+            // Nacteni hrace
+            player = new Player(Content.Load<Texture2D>("davis2_0.png"), new Vector2(100, 130), new Rectangle(21, 14, 32, 63), new Rectangle(0, 0, 80, 80), new Vector2(0, 0));
+
+
+            // Nacteni pozadi
+            background = Content.Load<Texture2D>("clouds.png");
+
+
+            // Nahodime si nejake ty dilky
+            for (int i = 0; i < 11; i++)
+            {
+                tiles.Add(new Tile(Content.Load<Texture2D>("tile.png"), new Vector2(32 * (i + 1), 350), new Rectangle(0, 0, 32, 32), new Rectangle(0, 0, 32, 32)));
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                tiles.Add(new Tile(Content.Load<Texture2D>("tile.png"), new Vector2(32 * (i + 12), 400), new Rectangle(0, 0, 32, 32), new Rectangle(0, 0, 32, 32)));
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                tiles.Add(new Tile(Content.Load<Texture2D>("tile.png"), new Vector2(32 * (i + 15), 350), new Rectangle(0, 0, 32, 32), new Rectangle(0, 0, 32, 32)));
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                tiles.Add(new Tile(Content.Load<Texture2D>("tile.png"), new Vector2(32 * (i + 8), 190), new Rectangle(0, 0, 32, 32), new Rectangle(0, 0, 32, 32)));
+            }
+
+            for (int i = 0; i < 15; i++)
+            {
+                tiles.Add(new Tile(Content.Load<Texture2D>("tile.png"), new Vector2(0, 32 * i), new Rectangle(0, 0, 32, 32), new Rectangle(0, 0, 32, 32)));
+            }
+
+            for (int i = 0; i < 15; i++)
+            {
+                tiles.Add(new Tile(Content.Load<Texture2D>("tile.png"), new Vector2(610, 32 * i), new Rectangle(0, 0, 32, 32), new Rectangle(0, 0, 32, 32)));
+            }
+
+            for (int i = 0; i < 2; i++)
+            {
+                tiles.Add(new Tile(Content.Load<Texture2D>("tile.png"), new Vector2(32 * (i +1), 250), new Rectangle(0, 0, 32, 32), new Rectangle(0, 0, 32, 32)));
+            }
+
+            //tiles.Add(new Tile(Content.Load<Texture2D>("tile.png"), new Vector2(120, 350), new Rectangle(0, 0, 32, 32), new Rectangle(0, 0, 32, 32)));
+            //tiles.Add(new Tile(Content.Load<Texture2D>("tile.png"), new Vector2(157, 350), new Rectangle(0, 0, 32, 32), new Rectangle(0, 0, 32, 32)));
+           
+            
+
+
 
         }
 
@@ -86,17 +134,18 @@ namespace Doc_Mad
 
             // TODO: Add your update logic here
 
-            // Pokud je update zavolan driv, nez vyprsi CD, nic se neudela
-            cd -= (int)gameTime.ElapsedGameTime.TotalMilliseconds;
-            if (cd < 0)
+            
+            // Prepocet fyziky zacne az vterinu po spusteni, aby se nepadalo do textur
+            cd -= gameTime.ElapsedGameTime.Milliseconds;
+
+            if (cd <= 0)
             {
-                cd = 100;
-                if ((frame % 3) == 0)
-                {
-                    smer *= -1;
-                }
-                frame += smer;
+                player.Update(tiles, gameTime);
             }
+
+
+            // Posun pozadi
+            bgPos.X = (float)(bgPos.X - (gameTime.ElapsedGameTime.TotalMilliseconds / 128)) % 512;
 
 
             base.Update(gameTime);
@@ -108,16 +157,22 @@ namespace Doc_Mad
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.White);
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
+            for (int i = 0; i < 3; i++)
+            {
+                spriteBatch.Draw(background, new Vector2(bgPos.X + (512 * i), bgPos.Y), new Rectangle(0, 0, 512, 512), Color.White);
+            }
 
+            for (int i = 0; i < tiles.Count; i++)
+            {
+                tiles[i].Draw(spriteBatch);
+            }
 
-            spriteBatch.Draw(sprite, new Vector2(50f, 50f), new Rectangle(80 * (frame+4), 0, 80, 80), Color.White);
-
-
+            player.Draw(spriteBatch);
 
             spriteBatch.End();
 
